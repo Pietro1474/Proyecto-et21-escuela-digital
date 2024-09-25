@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        
         body, html {
             margin: 0;
             padding: 0;
@@ -313,24 +312,31 @@
             margin: 0 auto;
             height: 104vh; 
             padding: 40px; 
-            background-color: rgb(255, 255, 255);
-            box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+            background-color: #ffffff;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
             border-radius: 15px;
+            transition: box-shadow 0.3s ease;
         }
+
+        .contacto:hover {
+            box-shadow: 0 15px 60px rgba(0,0,0,0.2);
+        }
+
         .contacto .titulo-contacto {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2em;
+            font-size: 2.2em;
+            font-family: 'Poppins', sans-serif;
         }
 
         .contacto .titulo-contacto h2 {
-            color: rgb(0, 0, 0);
-            font-weight: 500;
+            color: #333333;
+            font-weight: 600;
         }
 
+        /* Caja Contenedora */
         .caja-contenedor {
-            position: relative;
             display: grid;
             grid-template-columns: 2fr 1fr;
             grid-template-rows: 5fr 4fr;
@@ -342,10 +348,11 @@
         }
 
         .contacto h3 {
-            color: #000000;
+            color: #222222;
             font-weight: 500;
-            font-size: 1.4em;
+            font-size: 1.6em;
             margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Formulario */
@@ -354,7 +361,6 @@
         }
 
         .forma-contenedor {
-            position: relative;
             width: 100%;
         }
 
@@ -366,7 +372,7 @@
         .input-contenedor {
             display: flex;
             flex-direction: column;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             width: 50%;
         }
 
@@ -375,115 +381,135 @@
         }
 
         .input-contenedor span {
-            color: #000000;
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         .input-contenedor input, .input-contenedor textarea {
-            padding: 10px;
+            padding: 12px;
             font-size: 1.1em;
             outline: none;
-            border: 1px solid black;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
         }
 
-        .input-contenedor input {
-            width: 80%;
+        .input-contenedor input:hover, .input-contenedor textarea:hover {
+            border-color: #0b187b;
         }
 
-        .input-contenedor textarea {
+        .input-contenedor input:focus, .input-contenedor textarea:focus {
+            border-color: #0b187b;
+        }
+
+        textarea {
+            height: 100px;
             resize: none;
-            min-height: 220px;
-            margin-bottom: 10px;
-            width: 90%;
         }
 
-        .input-contenedor input[type="submit"] {
-            background-color: #a8a8a8;
-            color: #000000;
+        .boton-enviar {
+            padding: 15px 30px;
             border: none;
-            font-size: 1.1em;
-            max-width: 100px;
-            font-weight: 500;
+            background-color: #0b187b;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
             cursor: pointer;
-            padding: 14px 15px;
+            transition: background-color 0.3s ease;
         }
 
-        .input-contenedor ::placeholder {
-            color: #a8a8a8;
+        .boton-enviar:hover {
+            background-color: #0056b3;
         }
 
-        /* Información de contacto */
         .info-contacto {
-            grid-area: info;
-            color: #000000;
+            padding: 20px;
+            background-color: #f8f8f8; /* Color de fondo para la sección */
+            border-radius: 10px; /* Bordes redondeados */
         }
 
         .info-contacto h3 {
-            color: #000000;
+            text-align: center; /* Centrar el título */
+            margin-bottom: 15px;
         }
 
-        .info-contacto .info-contenedor div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+        .info-contenedor {
+            display: flex; /* Usar flexbox para el diseño */
+            flex-direction: column; /* Cambiar la dirección a columna en pantallas pequeñas */
+            align-items: center; /* Centrar los elementos */
+            gap: 10px; /* Espacio entre los elementos */
         }
 
-        .info-contacto .info-contenedor div span {
-            min-width: 40px;
-            height: 40px;
-            color: #000000;
-            background: #a8a8a8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1em;
-            border-radius: 40px;
-            margin-right: 10px;
+        .info-contenedor div {
+            display: flex; /* Usar flexbox para icono y texto */
+            align-items: center; /* Centrar verticalmente */
+            gap: 10px; /* Espacio entre icono y texto */
+            width: 100%; /* Tomar el ancho completo */
+            max-width: 400px; /* Limitar el ancho máximo */
         }
 
-        .info-contacto .info-contenedor div p, 
-        .info-contacto .info-contenedor div a {
-            color: #000000;
+        .info-contenedor a {
+            text-decoration: none; /* Quitar subrayado de enlaces */
+            color: #333; /* Color de texto */
         }
 
-        .info-contacto .info-contenedor div p:hover, 
-        .info-contacto .info-contenedor div a:hover{
-            color: #0b187b;
+        .info-contenedor a:hover {
+            color: #0056b3; /* Color en hover */
         }
 
-        .info-contacto .info-contenedor div a {
-            text-decoration: none;
-            font-size: 1em;
-        }
-
-        /* Redes sociales */
         .redes {
-            margin-top: 40px;
-            display: flex;
-        }
-
-        .redes li {
-            list-style: none;
-            margin-right: 15px;
-        }
-
-        .redes li a {
-            font-size: 2em;
-            color: #100f0f;
-        }
-
-        .redes li a:hover {
-            color: #0b187b;
-        }
-
-        /* Mapa */
-        .map-contacto {
-            grid-area: map;
+            list-style: none; /* Quitar estilos de lista */
+            display: flex; /* Usar flexbox para las redes sociales */
+            justify-content: center; /* Centrar horizontalmente */
             padding: 0;
         }
 
-        .map iframe {
+        .redes li {
+            margin: 0 10px; /* Espacio entre los iconos de redes sociales */
+        }
+
+        .redes a {
+            font-size: 24px; /* Tamaño de los iconos */
+            color: #333; /* Color de los iconos */
+        }
+
+        .redes a:hover {
+            color: #0056b3; /* Color en hover */
+        }
+
+        /* Mapa */
+        .mapa {
+            grid-area: map;
+            height: 100%;
+            width: 100%;
+        }
+
+        .mapa iframe {
             width: 100%;
             height: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ccc;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         /* Barra de Desplazamiento */
@@ -505,18 +531,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
             border-radius: 10px;
-        }
-
-        /* Animaciones */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px); 
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0); 
-            }
         }
     </style>
 </head>
@@ -645,11 +659,11 @@
                         <div class="row50">
                             <div class="input-contenedor">
                                 <span>Nombre</span>
-                                <input type="text" placeholder="Victor" required>
+                                <input type="text" placeholder="nombre" required>
                             </div>
                             <div class="input-contenedor">
                                 <span>Apellido</span>
-                                <input type="text" placeholder="Soto" required>
+                                <input type="text" placeholder="apellido" required>
                             </div>
                         </div>
 

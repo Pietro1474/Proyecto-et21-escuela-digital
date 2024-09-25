@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([':email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Verificar la contraseña (asumiendo que está en texto claro, pero deberias usar hash en produccion)
     if ($user && $user['password'] === $password) {
         // Establecer sesion
         session_start();
