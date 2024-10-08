@@ -7,22 +7,22 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
-// Obtener el rol del usuario
-$rol = $_SESSION['user']['role'] ?? '';
-$username = $_SESSION['user']['username'] ?? '';
-
+    // Obtener el rol del usuario
+    $rol = $_SESSION['user']['role'] ?? '';
+    $username = $_SESSION['user']['username'] ?? '';
+    
 // Verificar el rol del usuario y definir el contenido
 switch ($rol) {
     case 'admin':
         $titulo = 'Inicio';
-        $mensaje = '<h1>Soto Gorila</h1>';
+        $mensaje = '<h1>hola admin</h1>';
         $contenido = '<p>Bienvenido al panel de administración.</p>';
         break;
 
     case 'alumno':
     case 'padre':
         $titulo = 'Inicio';
-        $mensaje = '<h1>Hola Papi</h1>';
+        $mensaje = '<h1>Hola alumno/padre</h1>';
         $contenido = '<p>Bienvenido a la plataforma.</p>
                       <p>Aquí puedes ver el calendario y otra información relevante.</p>';
         break;
@@ -31,7 +31,7 @@ switch ($rol) {
     case 'coordinador':
     case 'preceptor':  
         $titulo = 'Inicio';
-        $mensaje = '<h1>Hola Rata</h1>';
+        $mensaje = '<h1>Hola profesor/cordinador/preceptor</h1>';
         $contenido = '<p>Bienvenido a la plataforma.</p>
                       <p>Aquí puedes ver el calendario y otra información relevante.</p>';
         break;
@@ -208,9 +208,10 @@ switch ($rol) {
     </div>
   </header>
   <main>
-    <div class="card">
-      <?php echo $contenido; ?>
-    </div>
+  <div class="card">
+    <?php echo $mensaje; // Mostrar el mensaje correspondiente ?>
+    <?php echo $contenido; // Mostrar el contenido correspondiente ?>
+</div>
   </main>
   <footer>
     <p>2024 Tu Escuela. Todos los derechos reservados.</p>
