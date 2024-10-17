@@ -430,7 +430,7 @@
         }
 
         .info-contacto h3 {
-            text-align: center; /* Centrar el título */
+            text-align: center;
             margin-bottom: 15px;
         }
 
@@ -455,7 +455,7 @@
         }
 
         .info-contenedor a:hover {
-            color: #0056b3; /* Color en hover */
+            color: #0056b3;
         }
 
         .redes {
@@ -475,7 +475,7 @@
         }
 
         .redes a:hover {
-            color: #0056b3; /* Color en hover */
+            color: #0056b3;
         }
 
         /* Mapa */
@@ -537,37 +537,38 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="img/logo.png" alt="Logo fragata">
+            <a href="index.php"><img src="img/logo.png" alt="Logo fragata"></a>
         </div>
         <nav>
            <ul class="nav-links">
                 <li class="dropdown">
                     <a href="#" class="ta">Institucional<span class="arrow">&#9660;</span></a>
                     <ul class="submenu">
-                        <li><a href="#">Autoridades</a></li>
-                        <li><a href="#">Nuestra Historia</a></li>
-                        <li><a href="#">Nuestros Objetivos</a></li>
-                        <li><a href="#">Perfil de Egresado</a></li>
-                        <li><a href="#">Cooperadora</a></li>
-                        <li><a href="#">Biblioteca</a></li>
+                        <li><a href="informacion.php?section=autoridades">Autoridades</a></li>
+                        <li><a href="informacion.php?section=nuestra_historia">Nuestra Historia</a></li>
+                        <li><a href="informacion.php?section=nuestros_objetivos">Nuestros Objetivos</a></li>
+                        <li><a href="informacion.php?section=perfil_preceptor">Perfil de Preceptor</a></li>
+                        <li><a href="informacion.php?section=perfil_egresado">Perfil de Egresado</a></li>
+                        <li><a href="informacion.php?section=cooperadora">Cooperadora</a></li>
+                        <li><a href="informacion.php?section=biblioteca">Biblioteca</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#">Academica<span class="arrow">&#9660;</span></a>
                     <ul class="submenu">
-                        <li><a href="informacion.php" class="info-link" data-titulo="Maestro Mayor de Obras">Maestro Mayor de Obras</a></li>
-                        <li><a href="informacion.php" class="info-link" data-titulo="Técnico en Computación">Técnico en Computación</a></li>
-                        <li><a href="informacion.php" class="info-link" data-titulo="Plan de Estudios">Plan de Estudios</a></li>
-                        <li><a href="informacion.php" class="info-link" data-titulo="Turno Noche">Turno Noche</a></li>
-                        <li><a href="informacion.php" class="info-link" data-titulo="Proyectos">Proyectos</a></li>
+                        <li><a href="informacion.php?section=maestro_mayor_obras" class="info-link" data-titulo="Maestro Mayor de Obras">Maestro Mayor de Obras</a></li>
+                        <li><a href="informacion.php?section=tecnico_computacion" class="info-link" data-titulo="Técnico en Computación">Técnico en Computación</a></li>
+                        <li><a href="informacion.php?section=plan_estudios" class="info-link" data-titulo="Plan de Estudios">Plan de Estudios</a></li>
+                        <li><a href="informacion.php?section=turno_noche" class="info-link" data-titulo="Turno Noche">Turno Noche</a></li>
+                        <li><a href="informacion.php?section=proyectos" class="info-link" data-titulo="Proyectos">Proyectos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#">Alumnos<span class="arrow">&#9660;</span></a>
                     <ul class="submenu">
-                        <li><a href="#">Atención a Víctimas de Violencia</a></li>
-                        <li><a href="#">Tutorias</a></li>
-                        <li><a href="#">Documentación y Resoluciones</a></li>
+                        <li><a href="informacion.php?section=atencion_victimas">Atención a Víctimas de Violencia</a></li>
+                        <li><a href="informacion.php?section=tutorias">Tutorias</a></li>
+                        <li><a href="informacion.php?section=documentacion_resoluciones">Documentación y Resoluciones</a></li>
                     </ul>
                 </li>
                 <li class="login">
