@@ -210,7 +210,11 @@ switch ($rol) {
   <main>
   <div class="card">
     <?php echo $mensaje; // Mostrar el mensaje correspondiente ?>
+<<<<<<< HEAD
     <?php echo $contenido; // ?>
+=======
+    <?php echo $contenido; // Mostrar el contenido correspondiente ?>
+>>>>>>> 8303294f3ee1df136ca1fbeb791775e47a4063ef
 </div>
   </main>
   <footer>
