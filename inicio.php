@@ -51,7 +51,7 @@ switch ($rol) {
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -60,196 +60,153 @@ switch ($rol) {
       padding: 0;
       background-color: #f0f4f8;
       color: #333;
+      display: flex;
+      height: 100vh;
     }
 
-    header {
+    .sidebar {
+      width: 250px;
       background-color: #005a9c;
       color: white;
-      padding: 15px 20px;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #0073e6;
+      padding-left: 10px;
+    }
+
+    .sidebar footer {
+      text-align: center;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+      flex-grow: 1;
+    }
+
+    .header {
+      background-color: #f8f9fa;
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      position: relative;
     }
 
-    .header-logo {
-      position: relative;
-    }
-
-    .header-logo img {
-      height: 50px;
-      width: auto; 
+    .header h1 {
+      font-size: 24px;
+      color: #005a9c;
     }
 
     .profile-header {
       display: flex;
       align-items: center;
-      position: relative;
     }
 
     .profile-header img {
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       margin-left: 20px;
-      cursor: pointer;
-    }
-
-    .profile-options {
-      display: none;
-      position: absolute;
-      top: 70px;
-      right: 0;
-      background-color: #005a9c;
-      color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 10px;
-      width: 150px;
-      z-index: 1000;
-      text-align: left;
-    }
-
-    .profile-options a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin: 5px 0;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-
-    .profile-options a:hover {
-      color: #ffcc00;
-    }
-
-    .profile-header:hover .profile-options,
-    .profile-options:hover {
-      display: block;
-    }
-
-    main {
-      padding: 20px;
-      max-width: 1200px;
-      margin: 20px auto;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background-color: #005a9c;
-      color: white;
-      text-align: center;
-      padding: 15px 20px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
     }
 
     .profile-header div {
       display: flex;
       flex-direction: column;
-      margin-left: 20px;
+      margin-left: 15px;
     }
 
-    .profile-header h1 {
+    .profile-header h2 {
       margin: 0;
-      font-size: 20px;
-      color: #fff;
+      font-size: 18px;
     }
 
     .profile-header p {
       margin: 0;
-      color: #ddd;
+      color: #666;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
+    .dashboard-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-      .profile-header {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-      }
+    .dashboard-content h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
 
-      .profile-options {
-        text-align: center;
-        top: 70px;
-        right: unset;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-logo">
-      <img src="img/logo.png" alt="Logo">
-    </div>
-    <div class="profile-header">
-      <img src="img/user.png" alt="Avatar">
-      <div class="profile-options">
-        <a href="materias.php">Materias</a>
-        <a href="buscador.php">Buscador</a>
-        <a href="mailto:rodriguez.nicolas.et21.21@gmail.com">Contactar</a>
-        <a href="logout.php">Cerrar sesión</a>
-      </div>
-      <div>
-        <h1><?php echo htmlspecialchars($username); ?></h1>
-        <p><?php echo htmlspecialchars($username); ?></p>
-      </div>
-    </div>
-  </header>
-  <main>
-  <div class="card">
-    <?php echo $mensaje; // Mostrar el mensaje correspondiente ?>
-<<<<<<< HEAD
-    <?php echo $contenido; // ?>
-=======
-    <?php echo $contenido; // Mostrar el contenido correspondiente ?>
->>>>>>> 8303294f3ee1df136ca1fbeb791775e47a4063ef
-</div>
-  </main>
+
+<div class="sidebar">
+  <h2>Panel de Control</h2>
+  <nav>
+    <a href="materias.php">Materias</a>
+    <a href="buscador.php">Buscador</a>
+    <a href="mailto:rodriguez.nicolas.et21.21@gmail.com">Contactar</a>
+    <a href="logout.php">Cerrar sesión</a>
+  </nav>
   <footer>
     <p>2024 Tu Escuela. Todos los derechos reservados.</p>
   </footer>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const profileHeader = document.querySelector('.profile-header');
-    const profileOptions = document.querySelector('.profile-options');
-    
-    profileHeader.addEventListener('mouseenter', function() {
-      profileOptions.style.display = 'block';
-    });
+</div>
 
-    profileOptions.addEventListener('mouseenter', function() {
-      profileOptions.style.display = 'block';
-    });
+<div class="main-content">
+  <div class="header">
+    <h1><?php echo htmlspecialchars($titulo); ?></h1>
+    <div class="profile-header">
+      <img src="img/user.png" alt="Avatar">
+      <div>
+        <h2><?php echo htmlspecialchars($username); ?></h2>
+        <p><?php echo htmlspecialchars($username); ?></p>
+      </div>
+    </div>
+  </div>
 
-    profileHeader.addEventListener('mouseleave', function(event) {
-      setTimeout(() => {
-        if (!profileOptions.matches(':hover') && !profileHeader.matches(':hover')) {
-          profileOptions.style.display = 'none';
-        }
-      }, 100);
-    });
+  <div class="dashboard-content">
+    <?php echo $mensaje; ?>
+    <?php echo $contenido; ?>
+  </div>
 
-    profileOptions.addEventListener('mouseleave', function(event) {
-      setTimeout(() => {
-        if (!profileOptions.matches(':hover') && !profileHeader.matches(':hover')) {
-          profileOptions.style.display = 'none';
-        }
-      }, 100);
-    });
-  });
-</script>
+  <footer>
+    <p>2024 Tu Escuela. Todos los derechos reservados.</p>
+  </footer>
+</div>
 
 </body>
 </html>
