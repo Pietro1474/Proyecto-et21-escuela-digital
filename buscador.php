@@ -257,12 +257,87 @@
             anio INTEGER,
             division INTEGER
         );
+
+        -- Tabla padres
+        CREATE TABLE IF NOT EXISTS padres (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre VARCHAR(50),
+            apellido VARCHAR(50),
+            email VARCHAR(100),
+            dni VARCHAR(15),
+            telefono VARCHAR(20),
+            hijo_nombre VARCHAR(50),
+            hijo_apellido VARCHAR(50),
+            FOREIGN KEY (hijo_nombre, hijo_apellido) REFERENCES alumnos(nombre, apellido)
+        );
+
+        -- Tabla preceptores
+        CREATE TABLE IF NOT EXISTS preceptores (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre VARCHAR(50),
+            apellido VARCHAR(50),
+            dni VARCHAR(15),
+            email VARCHAR(100),
+            anio INTEGER,
+            divisiones TEXT -- Almacena como texto separado por comas
+        );
+
+        -- Tabla coordinadores
+        CREATE TABLE IF NOT EXISTS coordinadores (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre VARCHAR(50),
+            apellido VARCHAR(50),
+            dni VARCHAR(15),
+            email VARCHAR(100),
+            area VARCHAR(50)
+        );
+
+        -- Tabla profesores
+        CREATE TABLE IF NOT EXISTS profesores (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre VARCHAR(50),
+            apellido VARCHAR(50),
+            dni VARCHAR(15),
+            email VARCHAR(100),
+            telefono VARCHAR(20),
+            materia VARCHAR(50),
+            anio INTEGER,
+            division VARCHAR(10)
+        );
+
         CREATE TABLE IF NOT EXISTS usuarios (
             id_usuario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
             email VARCHAR(50),
             password TEXT,
             role TEXT
         );
+        CREATE TABLE IF NOT EXISTS materias (
+        id_materia INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre_materia TEXT,
+        id_alumno INTEGER,
+        bimestre_1_nota REAL,
+        bimestre_1_faltas INTEGER,
+        bimestre_1_asistencias INTEGER,
+        bimestre_1_participacion REAL,
+        bimestre_1_conducta TEXT,
+        bimestre_2_nota REAL,
+        bimestre_2_faltas INTEGER,
+        bimestre_2_asistencias INTEGER,
+        bimestre_2_participacion REAL,
+        bimestre_2_conducta TEXT,
+        bimestre_3_nota REAL,
+        bimestre_3_faltas INTEGER,
+        bimestre_3_asistencias INTEGER,
+        bimestre_3_participacion REAL,
+        bimestre_3_conducta TEXT,
+        bimestre_4_nota REAL,
+        bimestre_4_faltas INTEGER,
+        bimestre_4_asistencias INTEGER,
+        bimestre_4_participacion REAL,
+        bimestre_4_conducta TEXT,
+        nota_general REAL,
+        FOREIGN KEY (id_alumno) REFERENCES alumnos(id)
+    );
         ";
 
         $pdo->exec($sqlCreateTable);
